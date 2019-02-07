@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
     if(!searchText) return items;
     searchText = searchText.toLowerCase();
     return items.filter(it => {
-      return it['Issue count'] == searchText;
+      return it['Issue count'] >= searchText;
     });
   }
 }
