@@ -1,0 +1,29 @@
+.fileuploadcontainer {
+    margin: 20px 0;
+}
+
+.fileuploadcontainer .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.fileuploadcontainer .inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: blue; 
+    padding: 10px;
+    display: inline-block;
+}
+
+form section:nth-child(2) {
+    line-height: 3;
+}
+
+form section:nth-child(2) label {
+   margin-right: 20px;
+}

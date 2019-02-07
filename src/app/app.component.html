@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <h1>Reading CSV File</h1>
+  <div class="alert alert-danger" role="alert" *ngIf="invalidFileFormat">Invalid file format. Please select csv file to parse</div>
+  <div class="row fileuploadcontainer">
+    <form class="form-inline" name="FileUploadForm">
+      <section class="col-sm-3">
+        <div class="form-group">
+            <input type="file" class="inputfile" (change)="onFileUpload($event)" id="fileupload" name="fileupload"/>
+            <label for="fileupload">Select file</label>
+        </div>
+      </section>
+      <section class="col-sm-9">
+        <div class="form-group">
+          <label for="filterissuecount">Filter Issue Count</label>
+          <input class="form-control file-upload" [(ngModel)]="issueCount" id="filterissuecount" name="issuecount" placeholder="enter issue count">
+        </div>
+      </section>
+    </form>  
+  </div>
+  <div class="row">
+    <table class="table table-bordered" *ngIf="filecontent">
+      <thead>
+        <tr>
+          <th *ngFor="let data of headers">{{data}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of filecontent | filter:issueCount">
+          <td *ngFor="let key of data | keys">{{data[key]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
